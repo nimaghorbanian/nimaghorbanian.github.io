@@ -54,7 +54,7 @@
   .site-head { display: flex; justify-content: space-between; align-items: baseline; padding-block: 1.5rem; font-family: var(--sans); font-size: 0.95rem; }
   .site-head .mark { font-weight: 700; color: var(--night-text); text-decoration: none; }
   .site-head nav { display: flex; gap: 1.5rem; flex-wrap: wrap; }
-  .site-head nav a { color: var(--night-muted); text-decoration: none; }
+  .site-head nav a { color: rgba(234,240,248,0.82); text-decoration: none; }
   .site-head nav a:hover { color: var(--night-text); }
   @media (max-width: 560px) { .site-head { flex-direction: column; gap: 0.5rem; } .site-head nav { gap: 1rem; } }
 
@@ -79,7 +79,7 @@
   /* ---------- Light sections ---------- */
   section { padding-block: 4rem; border-top: 1px solid var(--rule); }
   section:first-of-type { border-top: 0; }
-  h2 { font-family: var(--sans); font-weight: 700; font-size: 1.75rem; line-height: 1.2; letter-spacing: -0.01em; margin: 0 0 1.25rem; }
+  h2 { font-family: var(--sans); font-weight: 700; font-size: clamp(1.9rem, 3vw, 2.4rem); line-height: 1.2; letter-spacing: -0.01em; margin: 0 0 1.25rem; }
   h3 { font-family: var(--sans); font-weight: 700; font-size: 1.15rem; line-height: 1.3; margin: 0 0 0.25rem; }
   p { margin: 0 0 1rem; }
   .split { display: grid; grid-template-columns: 14rem 1fr; gap: 2.5rem; }
@@ -108,7 +108,7 @@
   .path.on { stroke: var(--warm); stroke-width: 3.5; }
   .arrowhead { fill: var(--cold); }
   .arrowhead.muted { fill: var(--muted); }
-  .detail { margin-top: 1.75rem; min-height: 7.5rem; padding: 1.25rem 1.5rem; background: #fff; border: 1px solid var(--rule); border-left: 4px solid var(--warm); border-radius: 6px; max-width: 46rem; }
+  .detail { margin-top: 1.75rem; min-height: 7.5rem; padding: 1.25rem 1.5rem; background: #fff; border: 1px solid var(--rule); border-left: 4px solid var(--warm); border-radius: 12px; max-width: 46rem; }
   .detail h3 { margin-bottom: 0.4rem; }
   .detail p { margin: 0; color: var(--muted); }
   .facts { display: flex; flex-wrap: wrap; gap: 0.6rem; margin: 1.5rem 0 0; padding: 0; list-style: none; font-family: var(--sans); font-size: 0.95rem; }
@@ -144,7 +144,7 @@
 
   /* ---------- Icons ---------- */
   .ic { width: 24px; height: 24px; stroke: currentColor; fill: none; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; flex: none; }
-  .ic-badge { width: 52px; height: 52px; border-radius: 16px; display: grid; place-items: center; background: var(--cold-soft); color: var(--cold); flex: none; }
+  .ic-badge { width: 52px; height: 52px; border-radius: 12px; display: grid; place-items: center; background: var(--cold-soft); color: var(--cold); flex: none; }
   .ic-badge.warm { background: var(--warm-soft); color: #B4741B; }
   .ic-badge .ic { width: 26px; height: 26px; }
   .sec-title { display: flex; align-items: center; gap: 0.75rem; }
@@ -154,7 +154,7 @@
   /* ---------- Highlights strip, floating over the hero edge ---------- */
   .highlights { position: relative; z-index: 2; margin-top: -3.25rem; }
   .highlights ul { list-style: none; margin: 0; padding: 1.5rem; display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem;
-    background: #fff; border-radius: 18px; box-shadow: 0 18px 40px -18px rgba(20,29,51,0.35), 0 2px 6px rgba(20,29,51,0.06); }
+    background: #fff; border-radius: 24px; box-shadow: 0 18px 40px -18px rgba(20,29,51,0.35), 0 2px 6px rgba(20,29,51,0.06); }
   .highlights li { display: flex; align-items: center; gap: 0.9rem; padding: 0.25rem 0.5rem; }
   .highlights li + li { border-left: 1px solid var(--rule); padding-left: 1.25rem; }
   .highlights .num { font-family: var(--sans); font-weight: 700; font-size: 1.6rem; line-height: 1.05; color: var(--ink); }
@@ -179,7 +179,7 @@
 
   /* ---------- Research story with illustration ---------- */
   .story { display: grid; grid-template-columns: 1fr 26rem; gap: 3rem; align-items: start; }
-  .illus { background: linear-gradient(160deg, #1B2747, var(--night)); border-radius: 20px; padding: 1.25rem 1.25rem 1rem; color: var(--night-muted); position: sticky; top: 1.5rem; }
+  .illus { background: linear-gradient(160deg, #1B2747, var(--night)); border-radius: 24px; padding: 1.25rem 1.25rem 1rem; color: var(--night-muted); position: sticky; top: 1.5rem; }
   .illus svg { width: 100%; height: auto; display: block; }
   .illus p { font-family: var(--sans); font-size: 0.9rem; margin: 0.75rem 0.25rem 0.25rem; }
   @media (max-width: 900px) { .story { grid-template-columns: 1fr; } .illus { position: static; max-width: 30rem; } }
@@ -189,7 +189,7 @@
   .tile.feature { grid-column: span 2; }
   @media (max-width: 900px) { .tiles { grid-template-columns: repeat(2, 1fr); } .tile.feature { grid-column: span 2; } }
   @media (max-width: 560px) { .tiles { grid-template-columns: 1fr; } .tile.feature { grid-column: auto; } }
-  .tile { background: #fff; border: 1px solid var(--rule); border-radius: 18px; padding: 1.5rem; transition: transform .2s ease, box-shadow .2s ease, border-color .2s; }
+  .tile { background: #fff; border: 1px solid var(--rule); border-radius: 24px; padding: 1.5rem; transition: transform .2s ease, box-shadow .2s ease, border-color .2s; }
   .tile:hover { transform: translateY(-3px); border-color: #C7D1E0; box-shadow: 0 14px 30px -18px rgba(20,29,51,0.35); }
   @media (prefers-reduced-motion: reduce) { .tile, .tile:hover { transition: none; transform: none; } }
   .tile h3 { margin: 1rem 0 0.35rem; }
@@ -212,7 +212,7 @@
 
   /* ---------- Training & skills cards ---------- */
   .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr)); gap: 1.25rem; }
-  .card { background: #fff; border: 1px solid var(--rule); border-radius: 18px; padding: 1.5rem; display: flex; flex-direction: column; gap: 0.75rem; }
+  .card { background: #fff; border: 1px solid var(--rule); border-radius: 24px; padding: 1.5rem; display: flex; flex-direction: column; gap: 0.75rem; }
   .card .top { display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
   .card .hrs { font-family: var(--sans); font-weight: 700; font-size: 2rem; color: var(--ink); line-height: 1; }
   .card .hrs small { font-size: 1rem; color: var(--muted); font-weight: 500; margin-left: 0.15rem; }
@@ -221,8 +221,8 @@
   .note-line { font-family: var(--sans); color: var(--muted); font-size: 0.98rem; margin-top: 1.25rem; display: flex; align-items: center; gap: 0.5rem; }
   .note-line .ic { color: var(--cold); width: 20px; height: 20px; }
 
-  .pub { display: grid; grid-template-columns: auto 1fr; gap: 1.5rem; background: #fff; border: 1px solid var(--rule); border-radius: 18px; padding: 1.75rem; max-width: 52rem; }
-  .pub .cover { width: 84px; height: 108px; border-radius: 8px; background: linear-gradient(160deg, var(--cold), #2A4A7A); color: #fff; display: grid; place-items: center; box-shadow: 6px 6px 0 var(--warm-soft); }
+  .pub { display: grid; grid-template-columns: auto 1fr; gap: 1.5rem; background: #fff; border: 1px solid var(--rule); border-radius: 24px; padding: 1.75rem; max-width: 52rem; }
+  .pub .cover { width: 84px; height: 108px; border-radius: 12px; background: linear-gradient(160deg, var(--cold), #2A4A7A); color: #fff; display: grid; place-items: center; box-shadow: 6px 6px 0 var(--warm-soft); }
   .pub .cover .ic { width: 34px; height: 34px; }
   .pub p { margin: 0 0 0.75rem; }
   .pub .tags { display: flex; flex-wrap: wrap; gap: 0.5rem; font-family: var(--sans); font-size: 0.88rem; }
@@ -240,7 +240,7 @@
   .model-sec h2.sec-title { margin-bottom: 0.5rem; }
   /* ---------- Glass layer (only where something lives behind it) ---------- */
   .glass-panel {
-    max-width: 36rem; padding: 2.25rem 2.25rem 2rem; border-radius: 28px;
+    max-width: 36rem; padding: 2.25rem 2.25rem 2rem; border-radius: 24px;
     background: linear-gradient(145deg, rgba(255,255,255,0.10), rgba(255,255,255,0.03));
     border: 1px solid rgba(255,255,255,0.16);
     box-shadow: inset 0 1px 0 rgba(255,255,255,0.18), 0 30px 60px -30px rgba(0,0,0,0.6);
@@ -248,11 +248,7 @@
   }
   .hero::after { background: linear-gradient(90deg, rgba(20,29,51,0.55) 0%, rgba(20,29,51,0.25) 45%, rgba(20,29,51,0) 70%); }
   .hero .glass-panel .btn.secondary { background: rgba(255,255,255,0.06); }
-  .hero-note {
-    padding: 0.7rem 0.95rem; border-radius: 14px;
-    background: rgba(20,29,51,0.35); border: 1px solid rgba(255,255,255,0.12);
-    -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px);
-  }
+  .hero-note { opacity: 0.8; }
   .highlights ul {
     background: rgba(255,255,255,0.9);
     border: 1px solid rgba(255,255,255,0.8);
@@ -266,7 +262,7 @@
   }
   .contact .wrap { position: relative; }
   .contact .glass-card {
-    max-width: 44rem; padding: 2.25rem; border-radius: 28px;
+    max-width: 44rem; padding: 2.25rem; border-radius: 24px;
     background: linear-gradient(145deg, rgba(255,255,255,0.10), rgba(255,255,255,0.03));
     border: 1px solid rgba(255,255,255,0.16);
     box-shadow: inset 0 1px 0 rgba(255,255,255,0.18);
@@ -277,9 +273,24 @@
     .highlights ul { background: #fff; }
   }
   @media (max-width: 760px) {
-    .glass-panel { padding: 1.5rem 1.25rem; border-radius: 22px; }
+    .glass-panel { padding: 1.5rem 1.25rem; border-radius: 24px; }
     .contact .glass-card { padding: 1.5rem 1.25rem; }
   }
+
+  /* ---------- Quieter body: fewer boxes, one rhythm ---------- */
+  .model-sec { background: #E8EEF6; border-top: 0; }
+  .model-sec + section { border-top: 0; }
+  .highlights li { gap: 0; }
+  .interests { max-width: 46rem; }
+  .interests li.key { border-left: 3px solid var(--warm); padding-left: 1rem; }
+  .interests li.key:first-child { padding-top: 1rem; }
+  .skill-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 2.5rem; margin: 0; max-width: 54rem; }
+  .skill-list div { padding: 1rem 0; border-top: 1px solid var(--rule); }
+  .skill-list dt { font-family: var(--sans); font-weight: 700; font-size: 1.05rem; margin-bottom: 0.2rem; }
+  .skill-list dd { margin: 0; color: var(--muted); font-size: 1.02rem; line-height: 1.55; }
+  @media (max-width: 640px) { .skill-list { grid-template-columns: 1fr; } }
+  .citation { max-width: 52rem; }
+  .citation p:first-child { font-size: 1.15rem; }
 </style>
 </head>
 <body>
@@ -342,10 +353,10 @@
     <main>
     <div class="wrap highlights">
       <ul aria-label="Highlights">
-        <li><span class="ic-badge"><svg class="ic"><use href="#i-users"/></svg></span><span><span class="num">250</span><br><span class="lab">participants in my thesis study</span></span></li>
-        <li><span class="ic-badge warm"><svg class="ic"><use href="#i-book"/></svg></span><span><span class="num">2026</span><br><span class="lab">peer-reviewed publication</span></span></li>
-        <li><span class="ic-badge"><svg class="ic"><use href="#i-clock"/></svg></span><span><span class="num">246 h</span><br><span class="lab">of clinical therapy training</span></span></li>
-        <li><span class="ic-badge warm"><svg class="ic"><use href="#i-award"/></svg></span><span><span class="num">1st</span><br><span class="lab">in my B.A. class</span></span></li>
+        <li><span><span class="num">250</span><br><span class="lab">participants in my thesis study</span></span></li>
+        <li><span><span class="num">2026</span><br><span class="lab">peer-reviewed publication</span></span></li>
+        <li><span><span class="num">246 h</span><br><span class="lab">of clinical therapy training</span></span></li>
+        <li><span><span class="num">1st</span><br><span class="lab">in my B.A. class</span></span></li>
       </ul>
     </div>
 
@@ -356,7 +367,7 @@
           <img src="photo.jpg" alt="Portrait of Nima Ghorbanian" onerror="this.remove()">
         </div>
         <div class="text">
-          <h2 class="sec-title"><svg class="ic"><use href="#i-sparkle"/></svg>About me</h2>
+          <h2 class="sec-title">About me</h2>
           <p>I am a clinical psychology graduate from Iran. I finished first in my B.A. class at Payame Noor University, then completed my M.A. in Clinical Psychology at the University of Tabriz with a GPA of 18.27 out of 20.</p>
           <p>My research asks why early adversity can leave people feeling disconnected for years, and which social and emotional processes carry that effect. Alongside research, I have trained in cognitive behavioural therapy and schema therapy.</p>
           <ul class="where">
@@ -369,7 +380,7 @@
     </div></section>
 
 <section id="model" class="model-sec"><div class="wrap">
-      <h2 class="sec-title"><svg class="ic"><use href="#i-network"/></svg>Inside the thesis</h2>
+      <h2 class="sec-title">Inside the thesis</h2>
       <p class="intro">This is the model I tested with structural equation modeling. Select any box to see what it measures, and the paths through it light up.</p>
       <figure class="model" style="margin:0">
         <svg class="horizontal" viewBox="0 0 1000 320" role="group" aria-label="Thesis model">
@@ -383,10 +394,10 @@
           <path class="path" data-links="thermo lonely" d="M622,62 C700,62 710,134 788,134" marker-end="url(#ah)"/>
           <path class="path" data-links="risk lonely" d="M622,258 C700,258 710,186 788,186" marker-end="url(#ah)"/>
           <path class="path direct" data-links="trauma lonely" d="M210,160 L788,160" marker-end="url(#ahm)"/>
-          <g class="node" data-key="trauma" tabindex="0" role="button" aria-pressed="false" aria-label="Childhood trauma"><rect x="10" y="118" width="200" height="84" rx="10"/><text class="name" x="110" y="155" text-anchor="middle">Childhood trauma</text><text class="measure" x="110" y="180" text-anchor="middle">CTQ-SF</text></g>
-          <g class="node warm" data-key="thermo" tabindex="0" role="button" aria-pressed="false" aria-label="Social thermoregulation"><rect x="380" y="20" width="240" height="84" rx="10"/><text class="name" x="500" y="57" text-anchor="middle">Social thermoregulation</text><text class="measure" x="500" y="82" text-anchor="middle">STRAQ-1</text></g>
-          <g class="node" data-key="risk" tabindex="0" role="button" aria-pressed="false" aria-label="Risk avoidance"><rect x="380" y="216" width="240" height="84" rx="10"/><text class="name" x="500" y="253" text-anchor="middle">Risk avoidance</text><text class="measure" x="500" y="278" text-anchor="middle">STRAQ-1</text></g>
-          <g class="node" data-key="lonely" tabindex="0" role="button" aria-pressed="false" aria-label="Loneliness"><rect x="790" y="118" width="200" height="84" rx="10"/><text class="name" x="890" y="155" text-anchor="middle">Loneliness</text><text class="measure" x="890" y="180" text-anchor="middle">UCLA Loneliness Scale</text></g>
+          <g class="node" data-key="trauma" tabindex="0" role="button" aria-pressed="false" aria-label="Childhood trauma"><rect x="10" y="118" width="200" height="84" rx="12"/><text class="name" x="110" y="155" text-anchor="middle">Childhood trauma</text><text class="measure" x="110" y="180" text-anchor="middle">CTQ-SF</text></g>
+          <g class="node warm" data-key="thermo" tabindex="0" role="button" aria-pressed="false" aria-label="Social thermoregulation"><rect x="380" y="20" width="240" height="84" rx="12"/><text class="name" x="500" y="57" text-anchor="middle">Social thermoregulation</text><text class="measure" x="500" y="82" text-anchor="middle">STRAQ-1</text></g>
+          <g class="node" data-key="risk" tabindex="0" role="button" aria-pressed="false" aria-label="Risk avoidance"><rect x="380" y="216" width="240" height="84" rx="12"/><text class="name" x="500" y="253" text-anchor="middle">Risk avoidance</text><text class="measure" x="500" y="278" text-anchor="middle">STRAQ-1</text></g>
+          <g class="node" data-key="lonely" tabindex="0" role="button" aria-pressed="false" aria-label="Loneliness"><rect x="790" y="118" width="200" height="84" rx="12"/><text class="name" x="890" y="155" text-anchor="middle">Loneliness</text><text class="measure" x="890" y="180" text-anchor="middle">UCLA Loneliness Scale</text></g>
         </svg>
         <svg class="vertical" viewBox="0 0 360 560" role="group" aria-label="Thesis model">
           <defs><marker id="ah2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path class="arrowhead" d="M0,0 L10,5 L0,10 z"/></marker></defs>
@@ -394,10 +405,10 @@
           <path class="path" data-links="trauma risk" d="M210,92 C210,150 270,160 270,222" marker-end="url(#ah2)"/>
           <path class="path" data-links="thermo lonely" d="M90,318 C90,380 150,390 150,466" marker-end="url(#ah2)"/>
           <path class="path" data-links="risk lonely" d="M270,318 C270,380 210,390 210,466" marker-end="url(#ah2)"/>
-          <g class="node" data-key="trauma" tabindex="0" role="button" aria-pressed="false" aria-label="Childhood trauma"><rect x="70" y="10" width="220" height="80" rx="10"/><text class="name" x="180" y="46" text-anchor="middle">Childhood trauma</text><text class="measure" x="180" y="70" text-anchor="middle">CTQ-SF</text></g>
-          <g class="node warm" data-key="thermo" tabindex="0" role="button" aria-pressed="false" aria-label="Social thermoregulation"><rect x="2" y="224" width="176" height="92" rx="10"/><text class="name" x="90" y="258" text-anchor="middle">Social</text><text class="name" x="90" y="280" text-anchor="middle">thermoregulation</text><text class="measure" x="90" y="302" text-anchor="middle">STRAQ-1</text></g>
-          <g class="node" data-key="risk" tabindex="0" role="button" aria-pressed="false" aria-label="Risk avoidance"><rect x="182" y="224" width="176" height="92" rx="10"/><text class="name" x="270" y="268" text-anchor="middle">Risk avoidance</text><text class="measure" x="270" y="292" text-anchor="middle">STRAQ-1</text></g>
-          <g class="node" data-key="lonely" tabindex="0" role="button" aria-pressed="false" aria-label="Loneliness"><rect x="70" y="468" width="220" height="84" rx="10"/><text class="name" x="180" y="505" text-anchor="middle">Loneliness</text><text class="measure" x="180" y="530" text-anchor="middle">UCLA Loneliness Scale</text></g>
+          <g class="node" data-key="trauma" tabindex="0" role="button" aria-pressed="false" aria-label="Childhood trauma"><rect x="70" y="10" width="220" height="80" rx="12"/><text class="name" x="180" y="46" text-anchor="middle">Childhood trauma</text><text class="measure" x="180" y="70" text-anchor="middle">CTQ-SF</text></g>
+          <g class="node warm" data-key="thermo" tabindex="0" role="button" aria-pressed="false" aria-label="Social thermoregulation"><rect x="2" y="224" width="176" height="92" rx="12"/><text class="name" x="90" y="258" text-anchor="middle">Social</text><text class="name" x="90" y="280" text-anchor="middle">thermoregulation</text><text class="measure" x="90" y="302" text-anchor="middle">STRAQ-1</text></g>
+          <g class="node" data-key="risk" tabindex="0" role="button" aria-pressed="false" aria-label="Risk avoidance"><rect x="182" y="224" width="176" height="92" rx="12"/><text class="name" x="270" y="268" text-anchor="middle">Risk avoidance</text><text class="measure" x="270" y="292" text-anchor="middle">STRAQ-1</text></g>
+          <g class="node" data-key="lonely" tabindex="0" role="button" aria-pressed="false" aria-label="Loneliness"><rect x="70" y="468" width="220" height="84" rx="12"/><text class="name" x="180" y="505" text-anchor="middle">Loneliness</text><text class="measure" x="180" y="530" text-anchor="middle">UCLA Loneliness Scale</text></g>
         </svg>
         <div class="detail" id="detail" aria-live="polite">
           <h3>Select a box to explore the model</h3>
@@ -407,7 +418,7 @@
     </div></section>
 
     <section id="research"><div class="wrap">
-      <h2 class="sec-title"><svg class="ic"><use href="#i-flask"/></svg>The question behind my research</h2>
+      <h2 class="sec-title">The question behind my research</h2>
       <div class="story">
         <div class="text">
           <p>Adults who experienced abuse or neglect as children often report feeling lonelier. My thesis asked what carries that link.</p>
@@ -422,33 +433,16 @@
           </ul>
         </div>
         <figure class="illus">
-          <svg viewBox="0 0 400 300" role="img" aria-label="Illustration: one person stands apart, cool and alone, while a small group nearby glows warm and connected.">
-            <defs>
-              <radialGradient id="g-warm" cx="0.68" cy="0.55" r="0.45"><stop offset="0" stop-color="#F2A83E" stop-opacity="0.45"/><stop offset="1" stop-color="#F2A83E" stop-opacity="0"/></radialGradient>
-              <radialGradient id="g-cold" cx="0.2" cy="0.55" r="0.3"><stop offset="0" stop-color="#6080B2" stop-opacity="0.28"/><stop offset="1" stop-color="#6080B2" stop-opacity="0"/></radialGradient>
-            </defs>
+          <svg viewBox="0 0 400 300" role="img" aria-label="Illustration: one cool dot sits apart, reaching toward a warm, connected cluster of dots.">
+            <defs><radialGradient id="g-warm" cx="0.75" cy="0.48" r="0.42"><stop offset="0" stop-color="#F2A83E" stop-opacity="0.38"/><stop offset="1" stop-color="#F2A83E" stop-opacity="0"/></radialGradient></defs>
             <rect width="400" height="300" fill="url(#g-warm)"/>
-            <rect width="400" height="300" fill="url(#g-cold)"/>
-            <!-- faint background crowd -->
-            <g fill="#6080B2" opacity="0.35"><circle cx="30" cy="40" r="2"/><circle cx="120" cy="30" r="2"/><circle cx="200" cy="55" r="2"/><circle cx="360" cy="35" r="2"/><circle cx="380" cy="250" r="2"/><circle cx="20" cy="270" r="2"/><circle cx="160" cy="275" r="2"/></g>
-            <!-- the lonely figure -->
-            <g fill="none" stroke="#7F9CC9" stroke-width="2.5" stroke-linecap="round">
-              <circle cx="82" cy="138" r="15"/>
-              <path d="M54 212c2-28 13-44 28-44s26 16 28 44"/>
-              <path d="M52 112l-6-6M112 112l6-6M82 100v-9" opacity="0.6"/>
-            </g>
-            <!-- the question: a reach across the gap -->
-            <path d="M118 170c35-22 60-22 92-8" fill="none" stroke="#A9B6CC" stroke-width="2" stroke-dasharray="4 7" stroke-linecap="round"/>
-            <!-- connections in the warm group -->
-            <g stroke="#F2A83E" stroke-width="2" opacity="0.7" fill="none"><path d="M248 128 L300 112"/><path d="M300 112 L346 136"/><path d="M248 128 L346 136"/></g>
-            <!-- warm group -->
-            <g fill="#F2A83E">
-              <circle cx="248" cy="128" r="14"/><path d="M220 204c2-28 13-42 28-42s26 14 28 42z"/>
-              <circle cx="300" cy="112" r="15"/><path d="M270 196c2-30 14-46 30-46s28 16 30 46z" opacity="0.92"/>
-              <circle cx="346" cy="136" r="13"/><path d="M320 208c2-26 12-40 26-40s24 14 26 40z" opacity="0.85"/>
-            </g>
-            <g fill="#FFD9A0" opacity="0.6"><circle cx="276" cy="80" r="3"/><circle cx="330" cy="86" r="2.5"/><circle cx="220" cy="96" r="2"/></g>
-            <path d="M40 232h330" stroke="#3A4A70" stroke-width="2" stroke-linecap="round"/>
+            <g fill="#6080B2" opacity="0.4"><circle cx="28" cy="40" r="2"/><circle cx="120" cy="28" r="2"/><circle cx="196" cy="58" r="2"/><circle cx="372" cy="34" r="2"/><circle cx="384" cy="250" r="2"/><circle cx="22" cy="268" r="2"/><circle cx="158" cy="276" r="2"/><circle cx="70" cy="230" r="2"/><circle cx="210" cy="250" r="2"/><circle cx="360" cy="90" r="2"/></g>
+            <circle cx="86" cy="152" r="20" fill="none" stroke="#6080B2" stroke-opacity="0.35" stroke-dasharray="2 5"/>
+            <circle cx="86" cy="152" r="6" fill="#7F9CC9"/>
+            <path d="M108 148c40-16 82-16 134-6" fill="none" stroke="#A9B6CC" stroke-width="1.6" stroke-dasharray="3 7" stroke-linecap="round"/>
+            <g stroke="#F2A83E" stroke-width="1.8" stroke-opacity="0.65"><line x1="258" y1="118" x2="302" y2="98"/><line x1="302" y1="98" x2="344" y2="126"/><line x1="344" y1="126" x2="330" y2="172"/><line x1="330" y1="172" x2="282" y2="182"/><line x1="282" y1="182" x2="258" y2="118"/><line x1="300" y1="142" x2="258" y2="118"/><line x1="300" y1="142" x2="302" y2="98"/><line x1="300" y1="142" x2="344" y2="126"/><line x1="300" y1="142" x2="330" y2="172"/><line x1="300" y1="142" x2="282" y2="182"/></g>
+            <g fill="#F2A83E" opacity="0.22"><circle cx="258" cy="118" r="15"/><circle cx="302" cy="98" r="15"/><circle cx="344" cy="126" r="15"/><circle cx="330" cy="172" r="15"/><circle cx="282" cy="182" r="15"/><circle cx="300" cy="142" r="15"/></g>
+            <g fill="#F2A83E"><circle cx="258" cy="118" r="5.5"/><circle cx="302" cy="98" r="5.5"/><circle cx="344" cy="126" r="5.5"/><circle cx="330" cy="172" r="5.5"/><circle cx="282" cy="182" r="5.5"/><circle cx="300" cy="142" r="7"/></g>
           </svg>
           <p>Warmth and closeness are linked: the idea at the heart of social thermoregulation, and of my thesis.</p>
         </figure>
@@ -456,30 +450,27 @@
     </div></section>
 
     <section id="publication"><div class="wrap">
-      <h2 class="sec-title"><svg class="ic"><use href="#i-book"/></svg>Publication</h2>
-      <article class="pub">
-        <div class="cover" aria-hidden="true"><svg class="ic"><use href="#i-doc"/></svg></div>
-        <div>
-          <p>Heshmati, R., Ahmadi Farsani, M., &amp; <strong>Ghorbanian, N.</strong> (2026). The structural pattern of loneliness based on childhood trauma among students at the University of Tabriz: The mediating role of social thermoregulation and risk avoidance. <em>Research in Clinical Psychology and Counseling, 16</em>(1), 5–30.</p>
-          <p><a href="https://doi.org/10.22067/tpccp.2026.95703.1853">doi.org/10.22067/tpccp.2026.95703.1853</a></p>
-          <div class="tags"><span>Peer-reviewed</span><span>Structural equation modeling</span><span class="w">In Persian with an extended English abstract</span></div>
-        </div>
-      </article>
+      <h2 class="sec-title">Publication</h2>
+      <div class="citation">
+        <p>Heshmati, R., Ahmadi Farsani, M., &amp; <strong>Ghorbanian, N.</strong> (2026). The structural pattern of loneliness based on childhood trauma among students at the University of Tabriz: The mediating role of social thermoregulation and risk avoidance. <em>Research in Clinical Psychology and Counseling, 16</em>(1), 5–30.</p>
+        <p><a href="https://doi.org/10.22067/tpccp.2026.95703.1853">doi.org/10.22067/tpccp.2026.95703.1853</a></p>
+        <p class="note">Peer reviewed. Published in Persian with an extended English abstract.</p>
+      </div>
     </div></section>
 
     <section id="interests"><div class="wrap">
-      <h2 class="sec-title"><svg class="ic"><use href="#i-brain"/></svg>Research interests</h2>
-      <ul class="tiles">
-        <li class="tile"><span class="ic-badge"><svg class="ic"><use href="#i-shield"/></svg></span><h3>Childhood trauma and its long-term effects</h3><p>How early abuse and neglect carry forward into adult relationships and wellbeing.</p></li>
-        <li class="tile"><span class="ic-badge"><svg class="ic"><use href="#i-network"/></svg></span><h3>Loneliness and social connection</h3><p>Why some people struggle to feel connected, even when others are around.</p></li>
-        <li class="tile"><span class="ic-badge"><svg class="ic"><use href="#i-heart"/></svg></span><h3>Belonging and social needs</h3><p>The basic need to be accepted and to matter to others.</p></li>
-        <li class="tile"><span class="ic-badge"><svg class="ic"><use href="#i-photo"/></svg></span><h3>Nostalgia and emotion regulation</h3><p>How people draw on memories and feelings to cope with distress and disconnection.</p></li>
-        <li class="tile feature"><span class="ic-badge warm"><svg class="ic"><use href="#i-thermo"/></svg></span><h3>Social thermoregulation</h3><p>The link between physical warmth and closeness with other people. My thesis tested it directly as a mediator.</p></li>
+      <h2 class="sec-title">Research interests</h2>
+      <ul class="interests">
+        <li class="key"><h3>Social thermoregulation</h3><p>The link between physical warmth and closeness with other people. My thesis tested it directly as a mediator.</p></li>
+        <li><h3>Childhood trauma and its long-term effects</h3><p>How early abuse and neglect carry forward into adult relationships and wellbeing.</p></li>
+        <li><h3>Loneliness and social connection</h3><p>Why some people struggle to feel connected, even when others are around.</p></li>
+        <li><h3>Belonging and social needs</h3><p>The basic need to be accepted and to matter to others.</p></li>
+        <li><h3>Nostalgia and emotion regulation</h3><p>How people draw on memories and feelings to cope with distress and disconnection.</p></li>
       </ul>
     </div></section>
 
     <section id="path"><div class="wrap">
-      <h2 class="sec-title"><svg class="ic"><use href="#i-cap"/></svg>My path so far</h2>
+      <h2 class="sec-title">My path so far</h2>
       <ol class="timeline">
         <li><span class="dot"><svg class="ic"><use href="#i-cap"/></svg></span><div><div class="when">2017–2020</div><h3>B.A. in Psychology, Payame Noor University</h3><p>Damghan. GPA 18.22 / 20, ranked 1st in class.</p></div></li>
         <li><span class="dot"><svg class="ic"><use href="#i-couch"/></svg></span><div><div class="when">2021</div><h3>Training in psychoanalytic psychology</h3><p>Fundamental concepts, 16 hours, with Dr. Nahaleh Moshtagh.</p></div></li>
@@ -492,28 +483,20 @@
       </ol>
     </div></section>
 
-    <section id="training"><div class="wrap">
-      <h2 class="sec-title"><svg class="ic"><use href="#i-heart"/></svg>Clinical training</h2>
-      <div class="cards">
-        <div class="card"><div class="top"><span class="ic-badge"><svg class="ic"><use href="#i-cycle"/></svg></span><span class="hrs">150<small>h</small></span></div><h3>Cognitive Behavioral Therapy</h3><p>Dr. Abbas Bakhshipour, 2024</p></div>
-        <div class="card"><div class="top"><span class="ic-badge warm"><svg class="ic"><use href="#i-puzzle"/></svg></span><span class="hrs">80<small>h</small></span></div><h3>Advanced Schema Therapy</h3><p>Dr. Alireza Gol, 2026</p></div>
-        <div class="card"><div class="top"><span class="ic-badge"><svg class="ic"><use href="#i-couch"/></svg></span><span class="hrs">16<small>h</small></span></div><h3>Psychoanalytic Psychology</h3><p>Fundamental concepts. Dr. Nahaleh Moshtagh, 2021</p></div>
-      </div>
-      <p class="note-line"><svg class="ic"><use href="#i-clipboard"/></svg>Coursework in administering, scoring and interpreting the MMPI and NEO.</p>
-    </div></section>
 
     <section id="skills"><div class="wrap">
-      <h2 class="sec-title"><svg class="ic"><use href="#i-chart"/></svg>Skills</h2>
-      <div class="cards">
-        <div class="card"><span class="ic-badge"><svg class="ic"><use href="#i-chart"/></svg></span><h3>Analysis</h3><p>Structural equation modeling and mediation in AMOS; statistical analysis in SPSS.</p></div>
-        <div class="card"><span class="ic-badge"><svg class="ic"><use href="#i-clipboard"/></svg></span><h3>Research design</h3><p>Survey design, standardized measures (CTQ-SF, UCLA Loneliness Scale, STRAQ-1), ethics applications, Google Forms and Porsline.</p></div>
-        <div class="card"><span class="ic-badge warm"><svg class="ic"><use href="#i-globe"/></svg></span><h3>Languages</h3><p>Persian (native) and English (advanced).</p></div>
-        <div class="card"><span class="ic-badge"><svg class="ic"><use href="#i-id"/></svg></span><h3>Membership</h3><p>Psychology and Counseling Organization of Iran.</p></div>
-      </div>
+      <h2 class="sec-title">Skills</h2>
+      <dl class="skill-list">
+        <div><dt>Analysis</dt><dd>Structural equation modeling and mediation in AMOS; statistical analysis in SPSS.</dd></div>
+        <div><dt>Research design</dt><dd>Survey design, standardized measures (CTQ-SF, UCLA Loneliness Scale, STRAQ-1), ethics applications, Google Forms and Porsline.</dd></div>
+        <div><dt>Assessment</dt><dd>Coursework in administering, scoring and interpreting the MMPI and NEO.</dd></div>
+        <div><dt>Languages</dt><dd>Persian (native) and English (advanced).</dd></div>
+        <div><dt>Membership</dt><dd>Psychology and Counseling Organization of Iran.</dd></div>
+      </dl>
     </div></section>
 
     <section id="contact" class="contact"><div class="wrap"><div class="glass-card">
-      <h2 class="sec-title"><svg class="ic"><use href="#i-mail"/></svg>Get in touch</h2>
+      <h2 class="sec-title">Get in touch</h2>
       <p class="text">I am contacting faculty about PhD supervision for Fall 2027. I would be glad to hear from you.</p>
       <p class="big"><a href="mailto:nima.ghorbanian.psy@gmail.com">nima.ghorbanian.psy@gmail.com</a></p>
       <div class="btns">
