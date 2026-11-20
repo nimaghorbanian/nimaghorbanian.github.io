@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nima Ghorbanian — Clinical psychology researcher</title>
+<meta name="description" content="Nima Ghorbanian studies how childhood trauma shapes loneliness, and the role of social thermoregulation and risk avoidance. M.A. Clinical Psychology, University of Tabriz. Applying to PhD programs in Canada.">
+<meta property="og:title" content="Nima Ghorbanian — Clinical psychology researcher">
+<meta property="og:description" content="Research on childhood trauma, loneliness, belonging and social thermoregulation. Applying to PhD programs in Canada for Fall 2027.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper: #F5F7FA;
+    --ink: #1C2433;
+    --muted: #5E687B;
+    --rule: #D9DEE6;
+    --cold: #3F679E;
+    --warm: #D9902A;
+    --warm-soft: #FBEFD9;
+    --cold-soft: #E4ECF6;
+    --night: #141D33;
+    --night-text: #EAF0F8;
+    --night-muted: #A9B6CC;
+    --glow: #F2A83E;
+    --serif: "Source Serif 4", Georgia, "Times New Roman", serif;
+    --sans: "Schibsted Grotesk", "Helvetica Neue", Arial, sans-serif;
+    --measure: 40rem;
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+  body { margin: 0; background: var(--paper); color: var(--ink); font-family: var(--serif); font-size: 1.125rem; line-height: 1.65; }
+  a { color: var(--cold); text-underline-offset: 0.18em; text-decoration-thickness: 1px; }
+  a:hover { text-decoration-thickness: 2px; }
+  :focus-visible { outline: 3px solid var(--glow); outline-offset: 3px; border-radius: 2px; }
+  .wrap { width: min(100% - 2.5rem, 68rem); margin-inline: auto; }
+  .text { max-width: var(--measure); }
+
+  /* ---------- Hero: the warmth network ---------- */
+  .hero {
+    position: relative; overflow: hidden; background: var(--night); color: var(--night-text);
+    min-height: min(100vh, 920px); display: flex; flex-direction: column;
+  }
+  .hero canvas { position: absolute; inset: 0; width: 100%; height: 100%; display: block; cursor: crosshair; }
+  .hero::after { /* keeps the text side readable */
+    content: ""; position: absolute; inset: 0; pointer-events: none;
+    background: linear-gradient(90deg, rgba(20,29,51,0.92) 0%, rgba(20,29,51,0.7) 38%, rgba(20,29,51,0) 70%);
+  }
+  .hero > .wrap { position: relative; z-index: 1; pointer-events: none; }
+  .hero a, .hero .btn { pointer-events: auto; }
+  .site-head { display: flex; justify-content: space-between; align-items: baseline; padding-block: 1.5rem; font-family: var(--sans); font-size: 0.95rem; }
+  .site-head .mark { font-weight: 700; color: var(--night-text); text-decoration: none; }
+  .site-head nav { display: flex; gap: 1.5rem; flex-wrap: wrap; }
+  .site-head nav a { color: var(--night-muted); text-decoration: none; }
+  .site-head nav a:hover { color: var(--night-text); }
+  @media (max-width: 560px) { .site-head { flex-direction: column; gap: 0.5rem; } .site-head nav { gap: 1rem; } }
+
+  .hero-body { flex: 1; display: flex; flex-direction: column; justify-content: center; padding-block: 3rem 4.5rem; }
+  .hero h1 { font-family: var(--sans); font-weight: 700; font-size: clamp(2.8rem, 7vw, 5.4rem); line-height: 0.98; letter-spacing: -0.025em; margin: 0 0 0.5rem; max-width: 9ch; }
+  .hero .fa { font-family: var(--serif); font-size: 1.2rem; color: var(--night-muted); margin: 0 0 2rem; text-align: left; }
+  .hero .lede { font-size: clamp(1.3rem, 2.5vw, 1.7rem); line-height: 1.4; margin: 0 0 1rem; max-width: 30rem; }
+  .hero .status { font-family: var(--sans); font-size: 1rem; color: var(--night-muted); margin: 0 0 2rem; max-width: 30rem; }
+  .actions { display: flex; flex-wrap: wrap; gap: 0.75rem; font-family: var(--sans); font-size: 1rem; }
+  .btn { display: inline-block; padding: 0.75rem 1.2rem; border-radius: 999px; text-decoration: none; font-weight: 500; border: 1.5px solid currentColor; }
+  .btn:hover { text-decoration: none; }
+  .hero .btn.primary { background: var(--glow); border-color: var(--glow); color: var(--night); }
+  .hero .btn.primary:hover { background: #FFC170; border-color: #FFC170; }
+  .hero .btn.secondary { color: var(--night-text); border-color: rgba(234,240,248,0.5); }
+  .hero .btn.secondary:hover { border-color: var(--night-text); background: rgba(234,240,248,0.08); }
+  .hero-note { position: absolute; z-index: 1; right: 1.5rem; bottom: 1.25rem; max-width: 19rem; font-family: var(--sans); font-size: 0.88rem; line-height: 1.45; color: var(--night-muted); text-align: right; pointer-events: none; }
+  @media (max-width: 760px) {
+    .hero::after { background: linear-gradient(180deg, rgba(20,29,51,0.55) 0%, rgba(20,29,51,0.88) 55%, rgba(20,29,51,0.95) 100%); }
+    .hero-note { position: relative; right: auto; bottom: auto; text-align: left; margin: 0 1.25rem 1.5rem; }
+  }
+
+  /* ---------- Light sections ---------- */
+  section { padding-block: 4rem; border-top: 1px solid var(--rule); }
+  section:first-of-type { border-top: 0; }
+  h2 { font-family: var(--sans); font-weight: 700; font-size: 1.75rem; line-height: 1.2; letter-spacing: -0.01em; margin: 0 0 1.25rem; }
+  h3 { font-family: var(--sans); font-weight: 700; font-size: 1.15rem; line-height: 1.3; margin: 0 0 0.25rem; }
+  p { margin: 0 0 1rem; }
+  .split { display: grid; grid-template-columns: 14rem 1fr; gap: 2.5rem; }
+  .split > h2 { margin: 0; }
+  @media (max-width: 820px) { .split { grid-template-columns: 1fr; gap: 0.5rem; } }
+
+  /* Interactive model */
+  .model-sec h2 { margin-bottom: 0.5rem; }
+  .model-sec .intro { color: var(--muted); max-width: 40rem; margin-bottom: 2rem; }
+  .model svg { width: 100%; height: auto; display: block; overflow: visible; }
+  .model .vertical { display: none; }
+  @media (max-width: 640px) { .model .horizontal { display: none; } .model .vertical { display: block; max-width: 22rem; } }
+  .node { cursor: pointer; outline: none; }
+  .node rect { fill: #fff; stroke: var(--ink); stroke-width: 1.5; transition: fill .2s, stroke .2s; }
+  .node.warm rect { fill: var(--warm-soft); stroke: var(--warm); stroke-width: 2; }
+  .node:hover rect, .node:focus-visible rect { stroke-width: 3; }
+  .node[aria-pressed="true"] rect { fill: var(--ink); stroke: var(--ink); }
+  .node[aria-pressed="true"] text { fill: #fff; }
+  .node[aria-pressed="true"] .measure { fill: #C9D3E3; }
+  .node:focus-visible rect { stroke: var(--glow); }
+  .node text { font-family: var(--sans); fill: var(--ink); pointer-events: none; }
+  .node .name { font-size: 19px; font-weight: 700; }
+  .node .measure { font-size: 14px; fill: var(--muted); }
+  .path { fill: none; stroke: var(--cold); stroke-width: 2.25; transition: stroke .2s, stroke-width .2s; }
+  .path.direct { stroke-dasharray: 7 6; stroke: var(--muted); }
+  .path.on { stroke: var(--warm); stroke-width: 3.5; }
+  .arrowhead { fill: var(--cold); }
+  .arrowhead.muted { fill: var(--muted); }
+  .detail { margin-top: 1.75rem; min-height: 7.5rem; padding: 1.25rem 1.5rem; background: #fff; border: 1px solid var(--rule); border-left: 4px solid var(--warm); border-radius: 6px; max-width: 46rem; }
+  .detail h3 { margin-bottom: 0.4rem; }
+  .detail p { margin: 0; color: var(--muted); }
+  .facts { display: flex; flex-wrap: wrap; gap: 0.6rem; margin: 1.5rem 0 0; padding: 0; list-style: none; font-family: var(--sans); font-size: 0.95rem; }
+  .facts li { background: var(--cold-soft); color: var(--ink); padding: 0.35rem 0.8rem; border-radius: 999px; }
+
+  .citation { border-left: 3px solid var(--warm); padding: 0.25rem 0 0.25rem 1.25rem; margin: 0; }
+  .citation .note { font-family: var(--sans); font-size: 0.95rem; color: var(--muted); margin-top: 0.5rem; }
+  .interests { list-style: none; margin: 0; padding: 0; }
+  .interests li { padding: 1rem 0; border-bottom: 1px solid var(--rule); }
+  .interests li:first-child { padding-top: 0; }
+  .interests p { margin: 0; color: var(--muted); }
+  .entry { margin-bottom: 1.75rem; }
+  .entry:last-child { margin-bottom: 0; }
+  .entry .meta { font-family: var(--sans); font-size: 0.95rem; color: var(--muted); margin-bottom: 0.4rem; }
+  .entry ul { margin: 0.4rem 0 0; padding-left: 1.2rem; }
+  .entry li { margin-bottom: 0.25rem; }
+  .hours { list-style: none; margin: 0; padding: 0; }
+  .hours li { display: grid; grid-template-columns: 4.5rem 1fr; gap: 1rem; padding: 0.7rem 0; border-bottom: 1px solid var(--rule); align-items: baseline; }
+  .hours .h { font-family: var(--sans); font-weight: 700; font-size: 1.25rem; color: var(--cold); }
+  .hours .who { color: var(--muted); font-size: 1rem; }
+  .skills { display: grid; grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr)); gap: 1.5rem 2.5rem; }
+  .skills p { margin: 0; }
+
+  /* Contact closes on the night colour, echoing the hero */
+  .contact { background: var(--night); color: var(--night-text); border-top: 0; padding-block: 4.5rem; }
+  .contact h2 { color: var(--night-text); }
+  .contact p { color: var(--night-muted); }
+  .contact .big { font-family: var(--sans); font-size: clamp(1.4rem, 3.2vw, 2.1rem); font-weight: 700; margin: 0 0 1.75rem; word-break: break-word; }
+  .contact .big a { color: var(--night-text); text-decoration-color: var(--glow); text-decoration-thickness: 3px; }
+  .contact .btn.primary { background: var(--glow); border-color: var(--glow); color: var(--night); }
+  footer { font-family: var(--sans); font-size: 0.9rem; color: var(--night-muted); background: var(--night); padding-block: 0 2.5rem; }
+  footer .wrap { border-top: 1px solid rgba(169,182,204,0.25); padding-top: 1.5rem; }
+
+  /* ---------- Icons ---------- */
+  .ic { width: 24px; height: 24px; stroke: currentColor; fill: none; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; flex: none; }
+  .ic-badge { width: 52px; height: 52px; border-radius: 16px; display: grid; place-items: center; background: var(--cold-soft); color: var(--cold); flex: none; }
+  .ic-badge.warm { background: var(--warm-soft); color: #B4741B; }
+  .ic-badge .ic { width: 26px; height: 26px; }
+  .sec-title { display: flex; align-items: center; gap: 0.75rem; }
+  .sec-title .ic { width: 28px; height: 28px; color: var(--warm); }
+  .btn .ic { width: 18px; height: 18px; vertical-align: -3px; margin-right: 0.45rem; }
+
+  /* ---------- Highlights strip, floating over the hero edge ---------- */
+  .highlights { position: relative; z-index: 2; margin-top: -3.25rem; }
+  .highlights ul { list-style: none; margin: 0; padding: 1.5rem; display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem;
+    background: #fff; border-radius: 18px; box-shadow: 0 18px 40px -18px rgba(20,29,51,0.35), 0 2px 6px rgba(20,29,51,0.06); }
+  .highlights li { display: flex; align-items: center; gap: 0.9rem; padding: 0.25rem 0.5rem; }
+  .highlights li + li { border-left: 1px solid var(--rule); padding-left: 1.25rem; }
+  .highlights .num { font-family: var(--sans); font-weight: 700; font-size: 1.6rem; line-height: 1.05; color: var(--ink); }
+  .highlights .lab { font-family: var(--sans); font-size: 0.9rem; color: var(--muted); line-height: 1.3; }
+  @media (max-width: 900px) {
+    .highlights ul { grid-template-columns: repeat(2, 1fr); }
+    .highlights li + li { border-left: 0; padding-left: 0.5rem; }
+  }
+  @media (max-width: 480px) { .highlights ul { grid-template-columns: 1fr; } }
+
+  /* ---------- About with photo ---------- */
+  .about { display: grid; grid-template-columns: 15rem 1fr; gap: 3rem; align-items: center; }
+  .portrait { position: relative; width: 15rem; aspect-ratio: 1; border-radius: 50%;
+    background: radial-gradient(circle at 35% 30%, #2A3A63, var(--night)); display: grid; place-items: center; overflow: hidden;
+    box-shadow: 0 0 0 6px var(--paper), 0 0 0 9px var(--glow), 0 24px 50px -20px rgba(242,168,62,0.6); }
+  .portrait span { font-family: var(--sans); font-weight: 700; font-size: 4.2rem; color: var(--night-text); letter-spacing: -0.03em; }
+  .portrait img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+  .about .where { display: flex; flex-wrap: wrap; gap: 0.5rem 1.5rem; font-family: var(--sans); font-size: 0.98rem; color: var(--muted); margin-top: 1.25rem; padding: 0; list-style: none; }
+  .about .where li { display: flex; align-items: center; gap: 0.45rem; }
+  .about .where .ic { width: 18px; height: 18px; color: var(--cold); }
+  @media (max-width: 760px) { .about { grid-template-columns: 1fr; gap: 2rem; } .portrait { width: 11rem; } }
+
+  /* ---------- Research story with illustration ---------- */
+  .story { display: grid; grid-template-columns: 1fr 26rem; gap: 3rem; align-items: start; }
+  .illus { background: linear-gradient(160deg, #1B2747, var(--night)); border-radius: 20px; padding: 1.25rem 1.25rem 1rem; color: var(--night-muted); position: sticky; top: 1.5rem; }
+  .illus svg { width: 100%; height: auto; display: block; }
+  .illus p { font-family: var(--sans); font-size: 0.9rem; margin: 0.75rem 0.25rem 0.25rem; }
+  @media (max-width: 900px) { .story { grid-template-columns: 1fr; } .illus { position: static; max-width: 30rem; } }
+
+  /* ---------- Interest tiles ---------- */
+  .tiles { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
+  .tile.feature { grid-column: span 2; }
+  @media (max-width: 900px) { .tiles { grid-template-columns: repeat(2, 1fr); } .tile.feature { grid-column: span 2; } }
+  @media (max-width: 560px) { .tiles { grid-template-columns: 1fr; } .tile.feature { grid-column: auto; } }
+  .tile { background: #fff; border: 1px solid var(--rule); border-radius: 18px; padding: 1.5rem; transition: transform .2s ease, box-shadow .2s ease, border-color .2s; }
+  .tile:hover { transform: translateY(-3px); border-color: #C7D1E0; box-shadow: 0 14px 30px -18px rgba(20,29,51,0.35); }
+  @media (prefers-reduced-motion: reduce) { .tile, .tile:hover { transition: none; transform: none; } }
+  .tile h3 { margin: 1rem 0 0.35rem; }
+  .tile p { margin: 0; color: var(--muted); font-size: 1.02rem; line-height: 1.55; }
+  .tile.feature { background: linear-gradient(150deg, #FFF7EA, var(--warm-soft)); border-color: #F1D7A8; }
+
+  /* ---------- Timeline ---------- */
+  .timeline { list-style: none; margin: 0; padding: 0; position: relative; max-width: 46rem; }
+  .timeline::before { content: ""; position: absolute; left: 25px; top: 8px; bottom: 8px; width: 2px; background: linear-gradient(var(--cold), var(--glow)); border-radius: 2px; }
+  .timeline > li { position: relative; display: grid; grid-template-columns: 52px 1fr; gap: 1.25rem; padding-bottom: 2rem; }
+  .timeline > li:last-child { padding-bottom: 0; }
+  .timeline ul li { margin-bottom: 0.25rem; }
+  .timeline .dot { width: 52px; height: 52px; border-radius: 50%; display: grid; place-items: center; background: #fff; border: 2px solid var(--cold); color: var(--cold); position: relative; z-index: 1; }
+  .timeline .dot.warm { border-color: var(--warm); color: #B4741B; background: var(--warm-soft); }
+  .timeline .dot.next { border-style: dashed; border-color: var(--glow); color: #B4741B; }
+  .timeline .when { font-family: var(--sans); font-size: 0.92rem; font-weight: 500; color: var(--cold); margin-top: 0.15rem; }
+  .timeline h3 { margin: 0.1rem 0 0.3rem; }
+  .timeline p { margin: 0; color: var(--muted); font-size: 1.02rem; }
+  .timeline ul { margin: 0.4rem 0 0; padding-left: 1.1rem; color: var(--muted); font-size: 1rem; }
+
+  /* ---------- Training & skills cards ---------- */
+  .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr)); gap: 1.25rem; }
+  .card { background: #fff; border: 1px solid var(--rule); border-radius: 18px; padding: 1.5rem; display: flex; flex-direction: column; gap: 0.75rem; }
+  .card .top { display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
+  .card .hrs { font-family: var(--sans); font-weight: 700; font-size: 2rem; color: var(--ink); line-height: 1; }
+  .card .hrs small { font-size: 1rem; color: var(--muted); font-weight: 500; margin-left: 0.15rem; }
+  .card h3 { margin: 0; }
+  .card p { margin: 0; color: var(--muted); font-size: 1rem; line-height: 1.5; }
+  .note-line { font-family: var(--sans); color: var(--muted); font-size: 0.98rem; margin-top: 1.25rem; display: flex; align-items: center; gap: 0.5rem; }
+  .note-line .ic { color: var(--cold); width: 20px; height: 20px; }
+
+  .pub { display: grid; grid-template-columns: auto 1fr; gap: 1.5rem; background: #fff; border: 1px solid var(--rule); border-radius: 18px; padding: 1.75rem; max-width: 52rem; }
+  .pub .cover { width: 84px; height: 108px; border-radius: 8px; background: linear-gradient(160deg, var(--cold), #2A4A7A); color: #fff; display: grid; place-items: center; box-shadow: 6px 6px 0 var(--warm-soft); }
+  .pub .cover .ic { width: 34px; height: 34px; }
+  .pub p { margin: 0 0 0.75rem; }
+  .pub .tags { display: flex; flex-wrap: wrap; gap: 0.5rem; font-family: var(--sans); font-size: 0.88rem; }
+  .pub .tags span { background: var(--cold-soft); padding: 0.25rem 0.7rem; border-radius: 999px; }
+  .pub .tags span.w { background: var(--warm-soft); }
+  @media (max-width: 560px) { .pub { grid-template-columns: 1fr; } }
+
+  .section-lede { color: var(--muted); max-width: 40rem; margin: -0.5rem 0 2rem; }
+  .contact .btns { display: flex; flex-wrap: wrap; gap: 0.75rem; font-family: var(--sans); }
+  .contact .btn.secondary { color: var(--night-text); border-color: rgba(234,240,248,0.5); }
+
+  .hero-body { padding-bottom: 6.5rem; }
+  .hero-note { bottom: 4.5rem; }
+  @media (max-width: 760px) { .hero-note { margin-bottom: 4.5rem; } }
+  .model-sec h2.sec-title { margin-bottom: 0.5rem; }
+  /* ---------- Glass layer (only where something lives behind it) ---------- */
+  .glass-panel {
+    max-width: 36rem; padding: 2.25rem 2.25rem 2rem; border-radius: 28px;
+    background: linear-gradient(145deg, rgba(255,255,255,0.10), rgba(255,255,255,0.03));
+    border: 1px solid rgba(255,255,255,0.16);
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.18), 0 30px 60px -30px rgba(0,0,0,0.6);
+    -webkit-backdrop-filter: blur(14px) saturate(140%); backdrop-filter: blur(14px) saturate(140%);
+  }
+  .hero::after { background: linear-gradient(90deg, rgba(20,29,51,0.55) 0%, rgba(20,29,51,0.25) 45%, rgba(20,29,51,0) 70%); }
+  .hero .glass-panel .btn.secondary { background: rgba(255,255,255,0.06); }
+  .hero-note {
+    padding: 0.7rem 0.95rem; border-radius: 14px;
+    background: rgba(20,29,51,0.35); border: 1px solid rgba(255,255,255,0.12);
+    -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px);
+  }
+  .highlights ul {
+    background: rgba(255,255,255,0.9);
+    border: 1px solid rgba(255,255,255,0.8);
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.9), 0 24px 50px -22px rgba(20,29,51,0.45);
+    -webkit-backdrop-filter: blur(18px) saturate(160%); backdrop-filter: blur(18px) saturate(160%);
+  }
+  .contact { position: relative; overflow: hidden; }
+  .contact::before {
+    content: ""; position: absolute; width: 34rem; height: 34rem; left: min(30rem, 55%); top: -8rem; border-radius: 50%;
+    background: radial-gradient(circle, rgba(242,168,62,0.35), rgba(242,168,62,0) 65%); pointer-events: none;
+  }
+  .contact .wrap { position: relative; }
+  .contact .glass-card {
+    max-width: 44rem; padding: 2.25rem; border-radius: 28px;
+    background: linear-gradient(145deg, rgba(255,255,255,0.10), rgba(255,255,255,0.03));
+    border: 1px solid rgba(255,255,255,0.16);
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.18);
+    -webkit-backdrop-filter: blur(16px) saturate(140%); backdrop-filter: blur(16px) saturate(140%);
+  }
+  @supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+    .glass-panel, .contact .glass-card { background: rgba(20,29,51,0.82); }
+    .highlights ul { background: #fff; }
+  }
+  @media (max-width: 760px) {
+    .glass-panel { padding: 1.5rem 1.25rem; border-radius: 22px; }
+    .contact .glass-card { padding: 1.5rem 1.25rem; }
+  }
+</style>
+</head>
+<body>
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="i-users" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.2"/><path d="M3.5 19c0-3 2.5-5 5.5-5s5.5 2 5.5 5"/><circle cx="17" cy="9" r="2.5"/><path d="M15.8 14.2c2.7.3 4.7 2 4.7 4.8"/></symbol>
+    <symbol id="i-book" viewBox="0 0 24 24"><path d="M4 5.5C4 4.7 4.7 4 5.5 4H11v15H5.5A1.5 1.5 0 0 1 4 17.5z"/><path d="M20 5.5c0-.8-.7-1.5-1.5-1.5H13v15h5.5c.8 0 1.5-.7 1.5-1.5z"/></symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></symbol>
+    <symbol id="i-award" viewBox="0 0 24 24"><circle cx="12" cy="9" r="5"/><path d="M8.6 13 7 21l5-2.6 5 2.6-1.6-8"/></symbol>
+    <symbol id="i-brain" viewBox="0 0 24 24"><path d="M9.5 4.5A2.8 2.8 0 0 0 6.7 7a3 3 0 0 0-2.2 5 3 3 0 0 0 1.7 5.3A2.8 2.8 0 0 0 12 18V6.3a2.2 2.2 0 0 0-2.5-1.8z"/><path d="M14.5 4.5A2.8 2.8 0 0 1 17.3 7a3 3 0 0 1 2.2 5 3 3 0 0 1-1.7 5.3A2.8 2.8 0 0 1 12 18"/><path d="M8 10.5c1 0 2 .6 2 1.8M16 10.5c-1 0-2 .6-2 1.8"/></symbol>
+    <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3l7 3v5c0 4.5-3 8-7 10-4-2-7-5.5-7-10V6z"/><path d="M9 12l2 2 4-4"/></symbol>
+    <symbol id="i-network" viewBox="0 0 24 24"><circle cx="6" cy="12" r="2.5"/><circle cx="18" cy="6" r="2.5"/><circle cx="18" cy="18" r="2.5"/><path d="M8.2 10.8l7.6-3.6M8.2 13.2l7.6 3.6"/></symbol>
+    <symbol id="i-heart" viewBox="0 0 24 24"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/></symbol>
+    <symbol id="i-thermo" viewBox="0 0 24 24"><path d="M10 4.5a2 2 0 0 1 4 0v9.3a4 4 0 1 1-4 0z"/><path d="M12 9v6.5"/><path d="M17 6h2.5M17 9h2.5"/></symbol>
+    <symbol id="i-photo" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M4 15l4-4 4 4 3-3 5 5"/><circle cx="15.5" cy="8.5" r="1.5"/></symbol>
+    <symbol id="i-cap" viewBox="0 0 24 24"><path d="M2.5 9 12 4.5 21.5 9 12 13.5z"/><path d="M6.5 11v4.5c0 1.5 2.5 3 5.5 3s5.5-1.5 5.5-3V11"/><path d="M21.5 9v5"/></symbol>
+    <symbol id="i-chart" viewBox="0 0 24 24"><path d="M4 4v16h16"/><path d="M8.5 16v-4M12.5 16V8M16.5 16v-6"/></symbol>
+    <symbol id="i-clipboard" viewBox="0 0 24 24"><rect x="6" y="4.5" width="12" height="16" rx="2"/><rect x="9" y="3" width="6" height="3" rx="1"/><path d="M9 11h6M9 15h4"/></symbol>
+    <symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M3.5 12h17"/><path d="M12 3.5c2.5 2.5 3.5 5.5 3.5 8.5s-1 6-3.5 8.5c-2.5-2.5-3.5-5.5-3.5-8.5s1-6 3.5-8.5z"/></symbol>
+    <symbol id="i-id" viewBox="0 0 24 24"><rect x="3.5" y="5" width="17" height="14" rx="2"/><circle cx="9" cy="11" r="2"/><path d="M6.5 16c.5-1.5 1.5-2 2.5-2s2 .5 2.5 2"/><path d="M14 10h4M14 13h3"/></symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5.5" width="18" height="13" rx="2"/><path d="M3.5 7l8.5 6 8.5-6"/></symbol>
+    <symbol id="i-download" viewBox="0 0 24 24"><path d="M12 4v11"/><path d="M7.5 10.5 12 15l4.5-4.5"/><path d="M5 19.5h14"/></symbol>
+    <symbol id="i-doc" viewBox="0 0 24 24"><path d="M7 3.5h7l4 4V20a.5.5 0 0 1-.5.5H7a.5.5 0 0 1-.5-.5V4a.5.5 0 0 1 .5-.5z"/><path d="M14 3.5V8h4"/><path d="M9.5 12.5h5M9.5 16h5"/></symbol>
+    <symbol id="i-puzzle" viewBox="0 0 24 24"><path d="M5 5h4.5a2 2 0 1 1 4 0H18v4.5a2 2 0 1 0 0 4V18h-4.5a2 2 0 1 0-4 0H5v-4.5a2 2 0 1 1 0-4z"/></symbol>
+    <symbol id="i-cycle" viewBox="0 0 24 24"><path d="M4.5 12a7.5 7.5 0 0 1 12.8-5.3L19.5 9"/><path d="M19.5 4.5V9H15"/><path d="M19.5 12a7.5 7.5 0 0 1-12.8 5.3L4.5 15"/><path d="M4.5 19.5V15H9"/></symbol>
+    <symbol id="i-couch" viewBox="0 0 24 24"><path d="M5 11V8.5A2.5 2.5 0 0 1 7.5 6h9A2.5 2.5 0 0 1 19 8.5V11"/><path d="M3 12.5a1.5 1.5 0 0 1 3 0V14h12v-1.5a1.5 1.5 0 0 1 3 0V17H3z"/><path d="M5 17v2M19 17v2"/></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s6-5.5 6-11a6 6 0 0 0-12 0c0 5.5 6 11 6 11z"/><circle cx="12" cy="10" r="2.2"/></symbol>
+    <symbol id="i-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.5"/></symbol>
+    <symbol id="i-flask" viewBox="0 0 24 24"><path d="M9.5 3.5h5M10.5 3.5v5.5L5.5 18a1.8 1.8 0 0 0 1.6 2.5h9.8a1.8 1.8 0 0 0 1.6-2.5l-5-9V3.5"/><path d="M8 14.5h8"/></symbol>
+    <symbol id="i-sparkle" viewBox="0 0 24 24"><path d="M12 3v4M12 17v4M3 12h4M17 12h4M6 6l2.5 2.5M15.5 15.5 18 18M18 6l-2.5 2.5M8.5 15.5 6 18"/></symbol>
+  </svg>
+<header class="hero" id="top">
+    <canvas id="warmth" aria-hidden="true"></canvas>
+    <div class="wrap">
+      <div class="site-head">
+        <a class="mark" href="#top">Nima Ghorbanian</a>
+        <nav aria-label="Sections">
+          <a href="#about">About</a>
+          <a href="#model">Research</a>
+          <a href="#path">Path</a>
+          <a href="#contact">Contact</a>
+        </nav>
+      </div>
+    </div>
+    <div class="wrap hero-body">
+      <div class="glass-panel">
+      <h1>Nima Ghorbanian</h1>
+      <p class="fa" lang="fa" dir="rtl">نیما قربانیان</p>
+      <p class="lede">I study how childhood trauma shapes loneliness in adulthood, and how our need for warmth and closeness with others sits between the two.</p>
+      <p class="status">M.A. in Clinical Psychology, University of Tabriz. Applying to PhD programs in Canada for Fall 2027.</p>
+      <div class="actions">
+        <a class="btn primary" href="cv.pdf" download><svg class="ic"><use href="#i-download"/></svg>Download CV (PDF)</a>
+        <a class="btn secondary" href="mailto:nima.ghorbanian.psy@gmail.com"><svg class="ic"><use href="#i-mail"/></svg>Email me</a>
+        <a class="btn secondary" href="https://doi.org/10.22067/tpccp.2026.95703.1853"><svg class="ic"><use href="#i-doc"/></svg>Read the paper</a>
+      </div>
+      </div>
+    </div>
+    <p class="hero-note">Each dot is a person. Move your cursor, or touch the screen, to bring warmth: people drift closer and connect.</p>
+  </header>
+
+    <main>
+    <div class="wrap highlights">
+      <ul aria-label="Highlights">
+        <li><span class="ic-badge"><svg class="ic"><use href="#i-users"/></svg></span><span><span class="num">250</span><br><span class="lab">participants in my thesis study</span></span></li>
+        <li><span class="ic-badge warm"><svg class="ic"><use href="#i-book"/></svg></span><span><span class="num">2026</span><br><span class="lab">peer-reviewed publication</span></span></li>
+        <li><span class="ic-badge"><svg class="ic"><use href="#i-clock"/></svg></span><span><span class="num">246 h</span><br><span class="lab">of clinical therapy training</span></span></li>
+        <li><span class="ic-badge warm"><svg class="ic"><use href="#i-award"/></svg></span><span><span class="num">1st</span><br><span class="lab">in my B.A. class</span></span></li>
+      </ul>
+    </div>
+
+    <section id="about"><div class="wrap">
+      <div class="about">
+        <div class="portrait">
+          <span aria-hidden="true">NG</span>
+          <img src="photo.jpg" alt="Portrait of Nima Ghorbanian" onerror="this.remove()">
+        </div>
+        <div class="text">
+          <h2 class="sec-title"><svg class="ic"><use href="#i-sparkle"/></svg>About me</h2>
+          <p>I am a clinical psychology graduate from Iran. I finished first in my B.A. class at Payame Noor University, then completed my M.A. in Clinical Psychology at the University of Tabriz with a GPA of 18.27 out of 20.</p>
+          <p>My research asks why early adversity can leave people feeling disconnected for years, and which social and emotional processes carry that effect. Alongside research, I have trained in cognitive behavioural therapy and schema therapy.</p>
+          <ul class="where">
+            <li><svg class="ic"><use href="#i-pin"/></svg>Damghan, Iran</li>
+            <li><svg class="ic"><use href="#i-target"/></svg>Seeking a PhD in Canada, Fall 2027</li>
+            <li><svg class="ic"><use href="#i-globe"/></svg>Persian and English</li>
+          </ul>
+        </div>
+      </div>
+    </div></section>
+
+<section id="model" class="model-sec"><div class="wrap">
+      <h2 class="sec-title"><svg class="ic"><use href="#i-network"/></svg>Inside the thesis</h2>
+      <p class="intro">This is the model I tested with structural equation modeling. Select any box to see what it measures, and the paths through it light up.</p>
+      <figure class="model" style="margin:0">
+        <svg class="horizontal" viewBox="0 0 1000 320" role="group" aria-label="Thesis model">
+          <defs>
+            <marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path class="arrowhead" d="M0,0 L10,5 L0,10 z"/></marker>
+            <marker id="ahw" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path fill="#D9902A" d="M0,0 L10,5 L0,10 z"/></marker>
+            <marker id="ahm" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path class="arrowhead muted" d="M0,0 L10,5 L0,10 z"/></marker>
+          </defs>
+          <path class="path" data-links="trauma thermo" d="M210,134 C290,134 300,62 378,62" marker-end="url(#ah)"/>
+          <path class="path" data-links="trauma risk" d="M210,186 C290,186 300,258 378,258" marker-end="url(#ah)"/>
+          <path class="path" data-links="thermo lonely" d="M622,62 C700,62 710,134 788,134" marker-end="url(#ah)"/>
+          <path class="path" data-links="risk lonely" d="M622,258 C700,258 710,186 788,186" marker-end="url(#ah)"/>
+          <path class="path direct" data-links="trauma lonely" d="M210,160 L788,160" marker-end="url(#ahm)"/>
+          <g class="node" data-key="trauma" tabindex="0" role="button" aria-pressed="false" aria-label="Childhood trauma"><rect x="10" y="118" width="200" height="84" rx="10"/><text class="name" x="110" y="155" text-anchor="middle">Childhood trauma</text><text class="measure" x="110" y="180" text-anchor="middle">CTQ-SF</text></g>
+          <g class="node warm" data-key="thermo" tabindex="0" role="button" aria-pressed="false" aria-label="Social thermoregulation"><rect x="380" y="20" width="240" height="84" rx="10"/><text class="name" x="500" y="57" text-anchor="middle">Social thermoregulation</text><text class="measure" x="500" y="82" text-anchor="middle">STRAQ-1</text></g>
+          <g class="node" data-key="risk" tabindex="0" role="button" aria-pressed="false" aria-label="Risk avoidance"><rect x="380" y="216" width="240" height="84" rx="10"/><text class="name" x="500" y="253" text-anchor="middle">Risk avoidance</text><text class="measure" x="500" y="278" text-anchor="middle">STRAQ-1</text></g>
+          <g class="node" data-key="lonely" tabindex="0" role="button" aria-pressed="false" aria-label="Loneliness"><rect x="790" y="118" width="200" height="84" rx="10"/><text class="name" x="890" y="155" text-anchor="middle">Loneliness</text><text class="measure" x="890" y="180" text-anchor="middle">UCLA Loneliness Scale</text></g>
+        </svg>
+        <svg class="vertical" viewBox="0 0 360 560" role="group" aria-label="Thesis model">
+          <defs><marker id="ah2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path class="arrowhead" d="M0,0 L10,5 L0,10 z"/></marker></defs>
+          <path class="path" data-links="trauma thermo" d="M150,92 C150,150 90,160 90,222" marker-end="url(#ah2)"/>
+          <path class="path" data-links="trauma risk" d="M210,92 C210,150 270,160 270,222" marker-end="url(#ah2)"/>
+          <path class="path" data-links="thermo lonely" d="M90,318 C90,380 150,390 150,466" marker-end="url(#ah2)"/>
+          <path class="path" data-links="risk lonely" d="M270,318 C270,380 210,390 210,466" marker-end="url(#ah2)"/>
+          <g class="node" data-key="trauma" tabindex="0" role="button" aria-pressed="false" aria-label="Childhood trauma"><rect x="70" y="10" width="220" height="80" rx="10"/><text class="name" x="180" y="46" text-anchor="middle">Childhood trauma</text><text class="measure" x="180" y="70" text-anchor="middle">CTQ-SF</text></g>
+          <g class="node warm" data-key="thermo" tabindex="0" role="button" aria-pressed="false" aria-label="Social thermoregulation"><rect x="2" y="224" width="176" height="92" rx="10"/><text class="name" x="90" y="258" text-anchor="middle">Social</text><text class="name" x="90" y="280" text-anchor="middle">thermoregulation</text><text class="measure" x="90" y="302" text-anchor="middle">STRAQ-1</text></g>
+          <g class="node" data-key="risk" tabindex="0" role="button" aria-pressed="false" aria-label="Risk avoidance"><rect x="182" y="224" width="176" height="92" rx="10"/><text class="name" x="270" y="268" text-anchor="middle">Risk avoidance</text><text class="measure" x="270" y="292" text-anchor="middle">STRAQ-1</text></g>
+          <g class="node" data-key="lonely" tabindex="0" role="button" aria-pressed="false" aria-label="Loneliness"><rect x="70" y="468" width="220" height="84" rx="10"/><text class="name" x="180" y="505" text-anchor="middle">Loneliness</text><text class="measure" x="180" y="530" text-anchor="middle">UCLA Loneliness Scale</text></g>
+        </svg>
+        <div class="detail" id="detail" aria-live="polite">
+          <h3>Select a box to explore the model</h3>
+          <p>250 university students, structural equation modeling in AMOS. The final model showed good fit, and the study was published in 2026.</p>
+        </div>
+      </figure>
+    </div></section>
+
+    <section id="research"><div class="wrap">
+      <h2 class="sec-title"><svg class="ic"><use href="#i-flask"/></svg>The question behind my research</h2>
+      <div class="story">
+        <div class="text">
+          <p>Adults who experienced abuse or neglect as children often report feeling lonelier. My thesis asked what carries that link.</p>
+          <p>I focused on two candidates. The first is <em>social thermoregulation</em>: how people use closeness with others to seek warmth and comfort. The second is <em>risk avoidance</em>: how strongly people steer away from risk. I tested whether these processes help explain why childhood trauma is followed by loneliness later in life.</p>
+          <p>I developed the proposal on my own and obtained ethics approval from the University of Tabriz Research Ethics Committee. I then collected questionnaire data, ran the analysis and wrote the introduction, method and discussion chapters.</p>
+          <p>For my PhD, I want to understand how early adversity shapes the ways people seek and avoid connection, and which processes protect people from chronic loneliness.</p>
+          <ul class="facts" aria-label="Study details">
+            <li>N = 250</li>
+            <li>Structural equation modeling</li>
+            <li>AMOS and SPSS</li>
+            <li>Ethics: IR.TABRIZU.REC.1403.052</li>
+          </ul>
+        </div>
+        <figure class="illus">
+          <svg viewBox="0 0 400 300" role="img" aria-label="Illustration: one person stands apart, cool and alone, while a small group nearby glows warm and connected.">
+            <defs>
+              <radialGradient id="g-warm" cx="0.68" cy="0.55" r="0.45"><stop offset="0" stop-color="#F2A83E" stop-opacity="0.45"/><stop offset="1" stop-color="#F2A83E" stop-opacity="0"/></radialGradient>
+              <radialGradient id="g-cold" cx="0.2" cy="0.55" r="0.3"><stop offset="0" stop-color="#6080B2" stop-opacity="0.28"/><stop offset="1" stop-color="#6080B2" stop-opacity="0"/></radialGradient>
+            </defs>
+            <rect width="400" height="300" fill="url(#g-warm)"/>
+            <rect width="400" height="300" fill="url(#g-cold)"/>
+            <!-- faint background crowd -->
+            <g fill="#6080B2" opacity="0.35"><circle cx="30" cy="40" r="2"/><circle cx="120" cy="30" r="2"/><circle cx="200" cy="55" r="2"/><circle cx="360" cy="35" r="2"/><circle cx="380" cy="250" r="2"/><circle cx="20" cy="270" r="2"/><circle cx="160" cy="275" r="2"/></g>
+            <!-- the lonely figure -->
+            <g fill="none" stroke="#7F9CC9" stroke-width="2.5" stroke-linecap="round">
+              <circle cx="82" cy="138" r="15"/>
+              <path d="M54 212c2-28 13-44 28-44s26 16 28 44"/>
+              <path d="M52 112l-6-6M112 112l6-6M82 100v-9" opacity="0.6"/>
+            </g>
+            <!-- the question: a reach across the gap -->
+            <path d="M118 170c35-22 60-22 92-8" fill="none" stroke="#A9B6CC" stroke-width="2" stroke-dasharray="4 7" stroke-linecap="round"/>
+            <!-- connections in the warm group -->
+            <g stroke="#F2A83E" stroke-width="2" opacity="0.7" fill="none"><path d="M248 128 L300 112"/><path d="M300 112 L346 136"/><path d="M248 128 L346 136"/></g>
+            <!-- warm group -->
+            <g fill="#F2A83E">
+              <circle cx="248" cy="128" r="14"/><path d="M220 204c2-28 13-42 28-42s26 14 28 42z"/>
+              <circle cx="300" cy="112" r="15"/><path d="M270 196c2-30 14-46 30-46s28 16 30 46z" opacity="0.92"/>
+              <circle cx="346" cy="136" r="13"/><path d="M320 208c2-26 12-40 26-40s24 14 26 40z" opacity="0.85"/>
+            </g>
+            <g fill="#FFD9A0" opacity="0.6"><circle cx="276" cy="80" r="3"/><circle cx="330" cy="86" r="2.5"/><circle cx="220" cy="96" r="2"/></g>
+            <path d="M40 232h330" stroke="#3A4A70" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+          <p>Warmth and closeness are linked: the idea at the heart of social thermoregulation, and of my thesis.</p>
+        </figure>
+      </div>
+    </div></section>
+
+    <section id="publication"><div class="wrap">
+      <h2 class="sec-title"><svg class="ic"><use href="#i-book"/></svg>Publication</h2>
+      <article class="pub">
+        <div class="cover" aria-hidden="true"><svg class="ic"><use href="#i-doc"/></svg></div>
+        <div>
+          <p>Heshmati, R., Ahmadi Farsani, M., &amp; <strong>Ghorbanian, N.</strong> (2026). The structural pattern of loneliness based on childhood trauma among students at the University of Tabriz: The mediating role of social thermoregulation and risk avoidance. <em>Research in Clinical Psychology and Counseling, 16</em>(1), 5–30.</p>
+          <p><a href="https://doi.org/10.22067/tpccp.2026.95703.1853">doi.org/10.22067/tpccp.2026.95703.1853</a></p>
+          <div class="tags"><span>Peer-reviewed</span><span>Structural equation modeling</span><span class="w">In Persian with an extended English abstract</span></div>
+        </div>
+      </article>
+    </div></section>
+
+    <section id="interests"><div class="wrap">
+      <h2 class="sec-title"><svg class="ic"><use href="#i-brain"/></svg>Research interests</h2>
+      <ul class="tiles">
+        <li class="tile"><span class="ic-badge"><svg class="ic"><use href="#i-shield"/></svg></span><h3>Childhood trauma and its long-term effects</h3><p>How early abuse and neglect carry forward into adult relationships and wellbeing.</p></li>
+        <li class="tile"><span class="ic-badge"><svg class="ic"><use href="#i-network"/></svg></span><h3>Loneliness and social connection</h3><p>Why some people struggle to feel connected, even when others are around.</p></li>
+        <li class="tile"><span class="ic-badge"><svg class="ic"><use href="#i-heart"/></svg></span><h3>Belonging and social needs</h3><p>The basic need to be accepted and to matter to others.</p></li>
+        <li class="tile"><span class="ic-badge"><svg class="ic"><use href="#i-photo"/></svg></span><h3>Nostalgia and emotion regulation</h3><p>How people draw on memories and feelings to cope with distress and disconnection.</p></li>
+        <li class="tile feature"><span class="ic-badge warm"><svg class="ic"><use href="#i-thermo"/></svg></span><h3>Social thermoregulation</h3><p>The link between physical warmth and closeness with other people. My thesis tested it directly as a mediator.</p></li>
+      </ul>
+    </div></section>
+
+    <section id="path"><div class="wrap">
+      <h2 class="sec-title"><svg class="ic"><use href="#i-cap"/></svg>My path so far</h2>
+      <ol class="timeline">
+        <li><span class="dot"><svg class="ic"><use href="#i-cap"/></svg></span><div><div class="when">2017–2020</div><h3>B.A. in Psychology, Payame Noor University</h3><p>Damghan. GPA 18.22 / 20, ranked 1st in class.</p></div></li>
+        <li><span class="dot"><svg class="ic"><use href="#i-couch"/></svg></span><div><div class="when">2021</div><h3>Training in psychoanalytic psychology</h3><p>Fundamental concepts, 16 hours, with Dr. Nahaleh Moshtagh.</p></div></li>
+        <li><span class="dot"><svg class="ic"><use href="#i-cap"/></svg></span><div><div class="when">2021–2024</div><h3>M.A. in Clinical Psychology, University of Tabriz</h3><p>GPA 18.27 / 20.</p>
+          <ul><li>Thesis: <em>The relationship between childhood trauma and loneliness: The mediating role of social thermoregulation and risk avoidance</em></li><li>Supervisor: Prof. Rasoul Heshmati. Advisor: Dr. Khalil Esmaeilpour. Examiner: Prof. Zeynab Khanjani</li></ul></div></li>
+        <li><span class="dot"><svg class="ic"><use href="#i-chart"/></svg></span><div><div class="when">2023–2024</div><h3>Thesis research</h3><p>Proposal, ethics approval, data collection from 250 students and structural equation modeling.</p></div></li>
+        <li><span class="dot"><svg class="ic"><use href="#i-cycle"/></svg></span><div><div class="when">2024</div><h3>Cognitive Behavioral Therapy training</h3><p>150 hours, with Dr. Abbas Bakhshipour.</p></div></li>
+        <li><span class="dot warm"><svg class="ic"><use href="#i-book"/></svg></span><div><div class="when">2026</div><h3>Thesis published, and advanced schema therapy training</h3><p>Research in Clinical Psychology and Counseling. Schema therapy: 80 hours, with Dr. Alireza Gol.</p></div></li>
+        <li><span class="dot next"><svg class="ic"><use href="#i-target"/></svg></span><div><div class="when">Fall 2027</div><h3>Next: a PhD in Canada</h3><p>Looking for a lab that studies loneliness, belonging or the long-term effects of early adversity.</p></div></li>
+      </ol>
+    </div></section>
+
+    <section id="training"><div class="wrap">
+      <h2 class="sec-title"><svg class="ic"><use href="#i-heart"/></svg>Clinical training</h2>
+      <div class="cards">
+        <div class="card"><div class="top"><span class="ic-badge"><svg class="ic"><use href="#i-cycle"/></svg></span><span class="hrs">150<small>h</small></span></div><h3>Cognitive Behavioral Therapy</h3><p>Dr. Abbas Bakhshipour, 2024</p></div>
+        <div class="card"><div class="top"><span class="ic-badge warm"><svg class="ic"><use href="#i-puzzle"/></svg></span><span class="hrs">80<small>h</small></span></div><h3>Advanced Schema Therapy</h3><p>Dr. Alireza Gol, 2026</p></div>
+        <div class="card"><div class="top"><span class="ic-badge"><svg class="ic"><use href="#i-couch"/></svg></span><span class="hrs">16<small>h</small></span></div><h3>Psychoanalytic Psychology</h3><p>Fundamental concepts. Dr. Nahaleh Moshtagh, 2021</p></div>
+      </div>
+      <p class="note-line"><svg class="ic"><use href="#i-clipboard"/></svg>Coursework in administering, scoring and interpreting the MMPI and NEO.</p>
+    </div></section>
+
+    <section id="skills"><div class="wrap">
+      <h2 class="sec-title"><svg class="ic"><use href="#i-chart"/></svg>Skills</h2>
+      <div class="cards">
+        <div class="card"><span class="ic-badge"><svg class="ic"><use href="#i-chart"/></svg></span><h3>Analysis</h3><p>Structural equation modeling and mediation in AMOS; statistical analysis in SPSS.</p></div>
+        <div class="card"><span class="ic-badge"><svg class="ic"><use href="#i-clipboard"/></svg></span><h3>Research design</h3><p>Survey design, standardized measures (CTQ-SF, UCLA Loneliness Scale, STRAQ-1), ethics applications, Google Forms and Porsline.</p></div>
+        <div class="card"><span class="ic-badge warm"><svg class="ic"><use href="#i-globe"/></svg></span><h3>Languages</h3><p>Persian (native) and English (advanced).</p></div>
+        <div class="card"><span class="ic-badge"><svg class="ic"><use href="#i-id"/></svg></span><h3>Membership</h3><p>Psychology and Counseling Organization of Iran.</p></div>
+      </div>
+    </div></section>
+
+    <section id="contact" class="contact"><div class="wrap"><div class="glass-card">
+      <h2 class="sec-title"><svg class="ic"><use href="#i-mail"/></svg>Get in touch</h2>
+      <p class="text">I am contacting faculty about PhD supervision for Fall 2027. I would be glad to hear from you.</p>
+      <p class="big"><a href="mailto:nima.ghorbanian.psy@gmail.com">nima.ghorbanian.psy@gmail.com</a></p>
+      <div class="btns">
+        <a class="btn primary" href="cv.pdf" download><svg class="ic"><use href="#i-download"/></svg>Download CV (PDF)</a>
+        <a class="btn secondary" href="https://doi.org/10.22067/tpccp.2026.95703.1853"><svg class="ic"><use href="#i-doc"/></svg>Read the paper</a>
+      </div>
+    </div></div></section>
+  </main>
+  <footer><div class="wrap">Nima Ghorbanian, Damghan, Iran. References available on request.</div></footer>
+
+<script>
+/* ---------- Interactive thesis model ---------- */
+(function () {
+  const info = {
+    trauma: ["Childhood trauma", "Experiences of abuse and neglect before adulthood, measured with the Childhood Trauma Questionnaire–Short Form (CTQ-SF). This is where the model starts."],
+    thermo: ["Social thermoregulation", "The tendency to seek warmth and comfort through closeness with other people, measured with the Social Thermoregulation and Risk Avoidance Questionnaire (STRAQ-1). One of the two mediators tested."],
+    risk: ["Risk avoidance", "How strongly a person steers away from risk, measured with the risk avoidance items of the STRAQ-1. The second mediator tested."],
+    lonely: ["Loneliness", "The painful sense that one's relationships fall short of what one needs, measured with the UCLA Loneliness Scale. This is the outcome the model explains."]
+  };
+  const nodes = document.querySelectorAll('.model .node');
+  const paths = document.querySelectorAll('.model .path');
+  const detail = document.getElementById('detail');
+  function select(key) {
+    nodes.forEach(n => n.setAttribute('aria-pressed', String(n.dataset.key === key)));
+    paths.forEach(p => {
+      if (!p.dataset.marker) p.dataset.marker = p.getAttribute('marker-end');
+      const on = p.dataset.links.split(' ').includes(key);
+      p.classList.toggle('on', on);
+      p.setAttribute('marker-end', on ? 'url(#ahw)' : p.dataset.marker);
+    });
+    detail.innerHTML = '<h3>' + info[key][0] + '</h3><p>' + info[key][1] + '</p>';
+  }
+  nodes.forEach(n => {
+    n.addEventListener('click', () => select(n.dataset.key));
+    n.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); select(n.dataset.key); } });
+  });
+})();
+
+/* ---------- Hero: warmth draws people together ---------- */
+(function () {
+  const canvas = document.getElementById('warmth');
+  const ctx = canvas.getContext('2d');
+  const hero = canvas.parentElement;
+  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const COLD = [96, 128, 178], WARM = [242, 168, 62];
+  let W = 0, H = 0, dpr = 1, people = [], link = 120, reach = 220;
+  const warm = { x: 0, y: 0, tx: 0, ty: 0, active: false, t: 0 };
+
+  function mix(a, b, k) { return [a[0] + (b[0] - a[0]) * k, a[1] + (b[1] - a[1]) * k, a[2] + (b[2] - a[2]) * k].map(Math.round); }
+
+  function resize() {
+    const r = hero.getBoundingClientRect();
+    dpr = Math.min(window.devicePixelRatio || 1, 2);
+    W = r.width; H = r.height;
+    canvas.width = W * dpr; canvas.height = H * dpr;
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    const count = Math.round(Math.min(110, Math.max(45, (W * H) / 11000)));
+    link = Math.max(90, Math.min(140, W / 10));
+    reach = Math.max(160, Math.min(280, Math.min(W, H) * 0.36));
+    people = Array.from({ length: count }, () => ({
+      x: Math.random() * W, y: Math.random() * H,
+      vx: (Math.random() - 0.5) * 0.3, vy: (Math.random() - 0.5) * 0.3,
+      heat: 0
+    }));
+    if (!warm.active) { warm.x = warm.tx = W * 0.68; warm.y = warm.ty = H * 0.45; }
+  }
+
+  function step() {
+    warm.t += 0.004;
+    if (!warm.active) { // drifts on its own until someone moves the pointer
+      warm.tx = W * (0.66 + 0.2 * Math.sin(warm.t * 1.3));
+      warm.ty = H * (0.48 + 0.3 * Math.sin(warm.t * 2.1 + 1));
+    }
+    warm.x += (warm.tx - warm.x) * 0.08;
+    warm.y += (warm.ty - warm.y) * 0.08;
+
+    for (const p of people) {
+      const dx = warm.x - p.x, dy = warm.y - p.y, d = Math.hypot(dx, dy) || 1;
+      const target = Math.max(0, 1 - d / reach);
+      p.heat += (target - p.heat) * 0.04;
+      if (d < reach) { p.vx += (dx / d) * 0.012 * target; p.vy += (dy / d) * 0.012 * target; }
+      p.vx += (Math.random() - 0.5) * 0.02; p.vy += (Math.random() - 0.5) * 0.02;
+    }
+    for (let i = 0; i < people.length; i++) { // personal space keeps the crowd from collapsing
+      for (let j = i + 1; j < people.length; j++) {
+        const a = people[i], b = people[j], dx = b.x - a.x, dy = b.y - a.y, d = Math.hypot(dx, dy);
+        if (d > 0 && d < 26) { const f = (26 - d) * 0.004; a.vx -= dx / d * f; a.vy -= dy / d * f; b.vx += dx / d * f; b.vy += dy / d * f; }
+      }
+    }
+    for (const p of people) {
+      p.vx *= 0.97; p.vy *= 0.97;
+      p.x += p.vx; p.y += p.vy;
+      if (p.x < -20) p.x = W + 20; if (p.x > W + 20) p.x = -20;
+      if (p.y < -20) p.y = H + 20; if (p.y > H + 20) p.y = -20;
+    }
+  }
+
+  function draw() {
+    ctx.clearRect(0, 0, W, H);
+    const g = ctx.createRadialGradient(warm.x, warm.y, 0, warm.x, warm.y, reach * 1.1);
+    g.addColorStop(0, 'rgba(242,168,62,0.16)'); g.addColorStop(1, 'rgba(242,168,62,0)');
+    ctx.fillStyle = g; ctx.fillRect(0, 0, W, H);
+
+    for (let i = 0; i < people.length; i++) {
+      for (let j = i + 1; j < people.length; j++) {
+        const a = people[i], b = people[j], d = Math.hypot(b.x - a.x, b.y - a.y);
+        const heat = (a.heat + b.heat) / 2;
+        const range = link * (0.55 + heat * 0.7); // warm people connect from farther away
+        if (d < range) {
+          const c = mix(COLD, WARM, Math.min(1, heat * 1.4));
+          ctx.strokeStyle = `rgba(${c[0]},${c[1]},${c[2]},${(1 - d / range) * (0.18 + heat * 0.6)})`;
+          ctx.lineWidth = 0.8 + heat * 1.4;
+          ctx.beginPath(); ctx.moveTo(a.x, a.y); ctx.lineTo(b.x, b.y); ctx.stroke();
+        }
+      }
+    }
+    for (const p of people) {
+      const c = mix(COLD, WARM, Math.min(1, p.heat * 1.4));
+      const r = 2.2 + p.heat * 2.6;
+      if (p.heat > 0.25) {
+        ctx.fillStyle = `rgba(${c[0]},${c[1]},${c[2]},${p.heat * 0.25})`;
+        ctx.beginPath(); ctx.arc(p.x, p.y, r * 3, 0, Math.PI * 2); ctx.fill();
+      }
+      ctx.fillStyle = `rgb(${c[0]},${c[1]},${c[2]})`;
+      ctx.beginPath(); ctx.arc(p.x, p.y, r, 0, Math.PI * 2); ctx.fill();
+    }
+  }
+
+  function point(e) {
+    const r = canvas.getBoundingClientRect();
+    const s = e.touches ? e.touches[0] : e;
+    warm.tx = s.clientX - r.left; warm.ty = s.clientY - r.top; warm.active = true;
+  }
+  hero.addEventListener('pointermove', point);
+  hero.addEventListener('touchstart', point, { passive: true });
+  hero.addEventListener('touchmove', point, { passive: true });
+  hero.addEventListener('pointerleave', () => { warm.active = false; });
+
+  let visible = true;
+  new IntersectionObserver(es => { visible = es[0].isIntersecting; }).observe(hero);
+  window.addEventListener('resize', resize);
+  resize();
+
+  if (reduce) { // one calm, settled frame
+    for (let k = 0; k < 400; k++) step();
+    draw();
+    hero.addEventListener('pointermove', () => { for (let k = 0; k < 30; k++) step(); draw(); });
+    return;
+  }
+  for (let k = 0; k < 300; k++) step(); // start with a little warmth already gathered
+  (function loop() { if (visible) { step(); draw(); } requestAnimationFrame(loop); })();
+})();
+</script>
+</body>
+</html>
